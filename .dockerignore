@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+venv
+node_modules
+.next
+target
+dist
+build
+*.md
+docs
+examples
+tests
+benchmarks
+.github
+.env
+data

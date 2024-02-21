@@ -1,0 +1,22 @@
+# Default owners for everything in the repo.
+* @solprobe/maintainers
+
+# Rust collector
+/services/collector/ @solprobe/collector-maintainers
+
+# Go API
+/services/api/ @solprobe/api-maintainers
+
+# Python (CLI + analyzer)
+/apps/cli/ @solprobe/cli-maintainers
+/services/analyzer/ @solprobe/analyzer-maintainers
+
+# TypeScript (dashboard + SDK)
+/apps/dashboard/ @solprobe/dashboard-maintainers
+/packages/sdk-typescript/ @solprobe/dashboard-maintainers
+
+# Node alerts
+/services/alerts/ @solprobe/alerts-maintainers
+
+# Docs
+/docs/ @solprobe/docs-maintainers

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package solprobe.rpc;
+
+// Contract for remote RPC benchmarking.
+
+message BenchmarkRequest {
+  string endpoint = 1;
+  uint32 samples = 2;
+}
+
+message BenchmarkResponse {
+  string endpoint = 1;
+  double avg_latency_ms = 2;
+  double p95_latency_ms = 3;
+  double tps = 4;
+}

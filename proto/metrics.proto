@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package solprobe.metrics;
+
+// Metric samples emitted by services for Prometheus-style collection.
+
+message MetricSample {
+  string name = 1;
+  map<string, string> labels = 2;
+  double value = 3;
+  uint64 timestamp_unix_ms = 4;
+}
+
+message MetricBatch {
+  repeated MetricSample samples = 1;
+}

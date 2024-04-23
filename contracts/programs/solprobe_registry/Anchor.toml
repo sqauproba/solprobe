@@ -1,0 +1,9 @@
+[programs.localnet]
+solprobe_registry = "SOLPROBE_REGISTRY_PROGRAM_ID"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "anchor test"

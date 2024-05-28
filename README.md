@@ -837,9 +837,9 @@ Actual benchmark results should be generated from reproducible test runs rather 
 ## 🗺 Roadmap
 
 ### v0.1 — Foundation
-- [ ] Python CLI with `status`, `rpc benchmark`, `slots watch`
-- [ ] Rich terminal output and configuration system
-- [ ] Direct RPC diagnostics (no backend required)
+- [x] Python CLI with `status`, `rpc benchmark`, `slots watch`
+- [x] Rich terminal output and configuration system
+- [x] Direct RPC diagnostics (no backend required)
 
 ### v0.2 — Diagnostics
 - [ ] Wallet inspection

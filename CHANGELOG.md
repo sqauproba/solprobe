@@ -5,6 +5,13 @@
 ### Changed
 - dashboard latency panel now samples p95 instead of mean
 
+## [0.1.0] - 2024-05-28
+
+### Foundation
+
+- Python CLI: `status`, `rpc benchmark`, `slots watch`
+- Rich terminal output and configuration system
+- Direct RPC diagnostics without a backend
 
 ## [1.7.9] - 2024-10-23
 

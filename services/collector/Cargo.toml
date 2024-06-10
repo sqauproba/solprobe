@@ -1,0 +1,26 @@
+[package]
+name = "solprobe-collector"
+version = "0.1.0"
+edition = "2021"
+description = "High-throughput Solana event ingestion for SolProbe"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = "0.23"
+futures-util = "0.3"
+solana-client = "1.18"
+solana-sdk = "1.18"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tonic = "0.11"
+prost = "0.12"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = true
+codegen-units = 1

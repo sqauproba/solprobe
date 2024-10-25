@@ -842,11 +842,11 @@ Actual benchmark results should be generated from reproducible test runs rather 
 - [x] Direct RPC diagnostics (no backend required)
 
 ### v0.2 — Diagnostics
-- [ ] Wallet inspection
-- [ ] Transaction inspection and simulation
-- [ ] Program inspection and log streaming
-- [ ] Compute diagnostics and priority fee analysis
-- [ ] Interactive TUI (`solprobe tui`)
+- [x] Wallet inspection
+- [x] Transaction inspection and simulation
+- [x] Program inspection and log streaming
+- [x] Compute diagnostics and priority fee analysis
+- [x] Interactive TUI (`solprobe tui`)
 
 ### v0.3 — Full Platform
 - [ ] Rust collector with live WebSocket ingestion

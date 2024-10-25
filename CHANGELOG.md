@@ -5,6 +5,15 @@
 ### Changed
 - dashboard latency panel now samples p95 instead of mean
 
+## [0.2.0] - 2024-10-25
+
+### Diagnostics
+
+- Wallet and transaction inspection with simulation
+- Program inspection and live log streaming
+- Compute diagnostics and priority fee analysis
+- Interactive TUI (`solprobe tui`)
+
 ## [0.1.0] - 2024-05-28
 
 ### Foundation

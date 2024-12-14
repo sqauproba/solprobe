@@ -1,0 +1,31 @@
+name: rpc-degradation
+when:
+  metric: rpc_latency_ms
+  operator: ">"
+  value: 500
+  for: 60s
+notify:
+  - discord
+  - webhook
+message: "High RPC latency detected: {{.rpc_latency_ms}}ms"
+
+---
+name: slot-lag
+when:
+  metric: slot_lag
+  operator: ">"
+  value: 30
+  for: 5m
+notify:
+  - telegram
+  - discord
+
+---
+name: failure-spike
+when:
+  metric: failure_rate
+  operator: ">"
+  value: 0.1
+  for: 10m
+notify:
+  - webhook

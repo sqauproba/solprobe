@@ -849,11 +849,11 @@ Actual benchmark results should be generated from reproducible test runs rather 
 - [x] Interactive TUI (`solprobe tui`)
 
 ### v0.3 — Full Platform
-- [ ] Rust collector with live WebSocket ingestion
-- [ ] Go API with REST and WebSocket relay
-- [ ] PostgreSQL + Redis storage layer
-- [ ] Next.js real-time dashboard
-- [ ] Python SDK and TypeScript SDK
+- [x] Rust collector with live WebSocket ingestion
+- [x] Go API with REST and WebSocket relay
+- [x] PostgreSQL + Redis storage layer
+- [x] Next.js real-time dashboard
+- [x] Python SDK and TypeScript SDK
 
 ### v0.4 — Intelligence
 - [ ] Historical analytics and trend detection

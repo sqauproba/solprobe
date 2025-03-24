@@ -5,6 +5,16 @@
 ### Changed
 - dashboard latency panel now samples p95 instead of mean
 
+## [0.3.0] - 2025-03-24
+
+### Full Platform
+
+- Rust collector with live WebSocket ingestion
+- Go API serving REST and WebSocket relay
+- PostgreSQL + Redis storage layer
+- Next.js real-time dashboard
+- Python and TypeScript SDKs
+
 ## [0.2.0] - 2024-10-25
 
 ### Diagnostics

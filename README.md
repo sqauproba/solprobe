@@ -856,11 +856,11 @@ Actual benchmark results should be generated from reproducible test runs rather 
 - [x] Python SDK and TypeScript SDK
 
 ### v0.4 — Intelligence
-- [ ] Historical analytics and trend detection
-- [ ] Network anomaly detection
-- [ ] Health scoring algorithm
-- [ ] RPC provider comparison reports
-- [ ] Automated incident reports
+- [x] Historical analytics and trend detection
+- [x] Network anomaly detection
+- [x] Health scoring algorithm
+- [x] RPC provider comparison reports
+- [x] Automated incident reports
 
 ### v1.0 — Production
 - [ ] Stable public API

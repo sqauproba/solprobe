@@ -5,6 +5,16 @@
 ### Changed
 - dashboard latency panel now samples p95 instead of mean
 
+## [0.4.0] - 2025-08-26
+
+### Intelligence
+
+- Historical analytics and trend detection
+- Network anomaly detection
+- Health scoring algorithm
+- RPC provider comparison reports
+- Automated incident reports
+
 ## [0.3.0] - 2025-03-24
 
 ### Full Platform

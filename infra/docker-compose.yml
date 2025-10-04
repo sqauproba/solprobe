@@ -1,0 +1,82 @@
+services:
+  dashboard:
+    build: ../apps/dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+    depends_on:
+      - api
+
+  api:
+    build: ../services/api
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: ${REDIS_URL}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - postgres
+      - redis
+
+  collector:
+    build: ../services/collector
+    ports:
+      - "50051:50051"
+    environment:
+      SOLANA_RPC_ENDPOINT: ${SOLANA_RPC_ENDPOINT}
+      SOLANA_WS_ENDPOINT: ${SOLANA_WS_ENDPOINT}
+    restart: unless-stopped
+
+  analyzer:
+    build: ../services/analyzer
+    environment:
+      REDIS_URL: ${REDIS_URL}
+    depends_on:
+      - redis
+
+  alerts:
+    build: ../services/alerts
+    environment:
+      DISCORD_WEBHOOK_URL: ${DISCORD_WEBHOOK_URL}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+    depends_on:
+      - api
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: solprobe
+      POSTGRES_PASSWORD: solprobe
+      POSTGRES_DB: solprobe
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:11.0.0
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: solprobe
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+volumes:
+  pgdata:
+  grafana-data:

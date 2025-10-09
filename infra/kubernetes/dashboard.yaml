@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solprobe-dashboard
+  labels:
+    app: solprobe-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solprobe-dashboard
+  template:
+    metadata:
+      labels:
+        app: solprobe-dashboard
+    spec:
+      containers:
+        - name: dashboard
+          image: solprobe/dashboard:0.1.0
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solprobe-dashboard
+spec:
+  selector:
+    app: solprobe-dashboard
+  ports:
+    - port: 3000
+      targetPort: 3000

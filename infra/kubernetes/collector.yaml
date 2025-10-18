@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solprobe-collector
+  labels:
+    app: solprobe-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solprobe-collector
+  template:
+    metadata:
+      labels:
+        app: solprobe-collector
+    spec:
+      containers:
+        - name: collector
+          image: solprobe/collector:0.1.0
+          ports:
+            - containerPort: 50051
+          env:
+            - name: SOLANA_RPC_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: solprobe-config
+                  key: solana_rpc_endpoint
+          resources:
+            requests:
+              cpu: 250m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: solprobe-collector
+spec:
+  selector:
+    app: solprobe-collector
+  ports:
+    - port: 50051
+      targetPort: 50051

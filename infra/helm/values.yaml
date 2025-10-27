@@ -1,0 +1,18 @@
+global:
+  imageRegistry: solprobe
+  imageTag: "0.1.0"
+
+api:
+  replicas: 2
+  service:
+    port: 8080
+
+collector:
+  replicas: 1
+  service:
+    port: 50051
+
+dashboard:
+  replicas: 1
+  service:
+    port: 3000

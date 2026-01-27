@@ -863,11 +863,11 @@ Actual benchmark results should be generated from reproducible test runs rather 
 - [x] Automated incident reports
 
 ### v1.0 — Production
-- [ ] Stable public API
-- [ ] Complete Helm charts and Terraform modules
-- [ ] Prometheus/Grafana observability stack
-- [ ] Production deployment guides
-- [ ] Community plugin ecosystem
+- [x] Stable public API
+- [x] Complete Helm charts and Terraform modules
+- [x] Prometheus/Grafana observability stack
+- [x] Production deployment guides
+- [x] Community plugin ecosystem
 
 ---
 

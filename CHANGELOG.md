@@ -5,6 +5,16 @@
 ### Changed
 - dashboard latency panel now samples p95 instead of mean
 
+## [1.0.0] - 2026-01-27
+
+### Production
+
+- Stable public API
+- Complete Helm charts and Terraform modules
+- Prometheus/Grafana observability stack
+- Production deployment guides
+- Community plugin ecosystem
+
 ## [0.4.0] - 2025-08-26
 
 ### Intelligence

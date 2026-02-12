@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: SolProbe API
+  version: 0.1.0
+  description: Public API gateway for the SolProbe Solana observability platform.
+servers:
+  - url: http://localhost:8080
+paths:
+  /v1/health:
+    get:
+      summary: Overall platform health
+      responses:
+        "200":
+          description: Health status and per-service checks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string }
+                  score: { type: integer }
+                  services:
+                    type: object
+                    additionalProperties: { type: string }
+  /v1/network:
+    get:
+      summary: Network metrics (TPS, slot time, skip rate)
+      responses:
+        "200":
+          description: Aggregated network metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tps: { type: number }
+                  slot_time_ms: { type: integer }
+                  skip_rate: { type: number }
+                  slot_count: { type: integer }
+  /v1/slots/latest:
+    get:
+      summary: Latest processed slot and finality status
+      responses:
+        "200":
+          description: Latest slot info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  slot: { type: integer }
+                  status: { type: string }
+                  processed: { type: boolean }
+  /v1/rpc/benchmark:
+    get:
+      summary: RPC benchmark results
+      parameters:
+        - in: query
+          name: endpoint
+          schema: { type: string }
+      responses:
+        "200":
+          description: Benchmark results
+  /v1/wallets/{address}:
+    get:
+      summary: Wallet inspection (balances, activity)
+      parameters:
+        - in: path
+          name: address
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Wallet details
+  /v1/programs/{id}:
+    get:
+      summary: Program metadata
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Program details
+  /v1/programs/{id}/logs:
+    get:
+      summary: Recent program logs
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Program logs
+  /v1/transactions/{signature}:
+    get:
+      summary: Transaction diagnostics
+      parameters:
+        - in: path
+          name: signature
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Transaction details
+  /v1/stream:
+    get:
+      summary: WebSocket/SSE stream of live events
+      responses:
+        "200":
+          description: Event stream

@@ -1,5 +1,5 @@
 
-## [1.7.9] - 2026-06-15
+## [1.8.9] - 2025-10-27
 
 - collector stability fixes
 - dashboard latency panel

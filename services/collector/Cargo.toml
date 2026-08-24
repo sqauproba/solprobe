@@ -8,7 +8,7 @@ description = "High-throughput Solana event ingestion for SolProbe"
 tokio = { version = "1", features = ["full"] }
 tokio-tungstenite = "0.23"
 futures-util = "0.3"
-solana-client = "1.18"
+solana-client = "4.2"
 solana-sdk = "1.18"
 anyhow = "1"
 tracing = "0.1"
